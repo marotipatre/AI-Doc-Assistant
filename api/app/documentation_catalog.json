@@ -1,0 +1,370 @@
+[
+  {
+    "name": "Python",
+    "category": "Languages",
+    "pattern": "\\bdef \\w+\\(|requires-python|from fastapi",
+    "path_pattern": "\\.py$",
+    "url": "https://docs.python.org/3/",
+    "packages": []
+  },
+  {
+    "name": "TypeScript",
+    "category": "Languages",
+    "pattern": "\"typescript\"\\s*:",
+    "path_pattern": "\\.tsx?$",
+    "url": "https://www.typescriptlang.org/docs/",
+    "packages": [
+      "typescript"
+    ]
+  },
+  {
+    "name": "Rust",
+    "category": "Languages",
+    "pattern": "\\bfn main\\(",
+    "path_pattern": "\\.rs$",
+    "url": "https://doc.rust-lang.org/book/",
+    "packages": []
+  },
+  {
+    "name": "Go",
+    "category": "Languages",
+    "pattern": "\\bfunc main\\(",
+    "path_pattern": "\\.go$",
+    "url": "https://go.dev/doc/",
+    "packages": []
+  },
+  {
+    "name": "Next.js",
+    "category": "Frontend",
+    "pattern": "\"next\"\\s*:|from [\\'\"]next/",
+    "path_pattern": "next\\.config\\.",
+    "url": "https://nextjs.org/docs",
+    "packages": [
+      "next"
+    ]
+  },
+  {
+    "name": "React",
+    "category": "Frontend",
+    "pattern": "\"react\"\\s*:|from [\\'\"]react[\\'\"]",
+    "path_pattern": "",
+    "url": "https://react.dev/learn",
+    "packages": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "Tailwind CSS",
+    "category": "Frontend",
+    "pattern": "tailwindcss|@tailwind",
+    "path_pattern": "",
+    "url": "https://tailwindcss.com/docs",
+    "packages": [
+      "tailwindcss"
+    ]
+  },
+  {
+    "name": "FastAPI",
+    "category": "Backend",
+    "pattern": "\\bfastapi\\b",
+    "path_pattern": "",
+    "url": "https://fastapi.tiangolo.com/",
+    "packages": [
+      "fastapi"
+    ]
+  },
+  {
+    "name": "Node.js",
+    "category": "Backend",
+    "pattern": "\"node\"\\s*:|FROM node:",
+    "path_pattern": "",
+    "url": "https://nodejs.org/docs/latest/api/",
+    "packages": []
+  },
+  {
+    "name": "PostgreSQL",
+    "category": "Databases",
+    "pattern": "postgresql|postgres:|psycopg",
+    "path_pattern": "",
+    "url": "https://www.postgresql.org/docs/",
+    "packages": [
+      "psycopg",
+      "pg"
+    ]
+  },
+  {
+    "name": "Prisma",
+    "category": "Databases",
+    "pattern": "@prisma/client|prisma/schema",
+    "path_pattern": "",
+    "url": "https://www.prisma.io/docs",
+    "packages": [
+      "prisma",
+      "@prisma/client"
+    ]
+  },
+  {
+    "name": "Redis",
+    "category": "Databases",
+    "pattern": "redis://|from redis|\"redis\"\\s*:",
+    "path_pattern": "",
+    "url": "https://redis.io/docs/latest/",
+    "packages": [
+      "redis",
+      "ioredis"
+    ]
+  },
+  {
+    "name": "SQLAlchemy",
+    "category": "Databases",
+    "pattern": "\\bsqlalchemy\\b",
+    "path_pattern": "",
+    "url": "https://docs.sqlalchemy.org/en/20/",
+    "packages": [
+      "sqlalchemy"
+    ]
+  },
+  {
+    "name": "pgvector",
+    "category": "Databases",
+    "pattern": "\\bpgvector\\b",
+    "path_pattern": "",
+    "url": "https://github.com/pgvector/pgvector",
+    "packages": [
+      "pgvector"
+    ]
+  },
+  {
+    "name": "Pydantic",
+    "category": "Backend",
+    "pattern": "\\bpydantic\\b",
+    "path_pattern": "",
+    "url": "https://docs.pydantic.dev/latest/",
+    "packages": [
+      "pydantic"
+    ]
+  },
+  {
+    "name": "OpenAI",
+    "category": "Model providers",
+    "pattern": "from openai|import openai|\"openai\"\\s*:|api\\.openai\\.com",
+    "path_pattern": "",
+    "url": "https://developers.openai.com/api/docs/",
+    "packages": [
+      "openai"
+    ]
+  },
+  {
+    "name": "Google Gemini",
+    "category": "Model providers",
+    "pattern": "google\\.genai|google-generativeai|google-genai|generativelanguage\\.googleapis\\.com|gemini-[a-z0-9]",
+    "path_pattern": "",
+    "url": "https://ai.google.dev/gemini-api/docs",
+    "packages": [
+      "google-genai",
+      "google-generativeai",
+      "@google/genai"
+    ]
+  },
+  {
+    "name": "Groq",
+    "category": "Model providers",
+    "pattern": "from groq|api\\.groq\\.com|\"groq\"\\s*:",
+    "path_pattern": "",
+    "url": "https://console.groq.com/docs/overview",
+    "packages": [
+      "groq",
+      "groq-sdk"
+    ]
+  },
+  {
+    "name": "Anthropic Claude",
+    "category": "Model providers",
+    "pattern": "\\banthropic\\b|claude-[a-z0-9]",
+    "path_pattern": "",
+    "url": "https://platform.claude.com/docs/en/intro",
+    "packages": [
+      "anthropic",
+      "@anthropic-ai/sdk"
+    ]
+  },
+  {
+    "name": "Hugging Face Transformers",
+    "category": "Model libraries",
+    "pattern": "from transformers|\"transformers\"\\s*:|huggingface_hub",
+    "path_pattern": "",
+    "url": "https://huggingface.co/docs/transformers/index",
+    "packages": [
+      "transformers",
+      "huggingface-hub"
+    ]
+  },
+  {
+    "name": "GPT-OSS 20B",
+    "category": "Models",
+    "pattern": "gpt-oss-20b",
+    "path_pattern": "",
+    "url": "https://huggingface.co/openai/gpt-oss-20b",
+    "packages": []
+  },
+  {
+    "name": "Meta Llama",
+    "category": "Models",
+    "pattern": "meta-llama/|llama-3[.\\w-]*",
+    "path_pattern": "",
+    "url": "https://huggingface.co/meta-llama",
+    "packages": []
+  },
+  {
+    "name": "Solana",
+    "category": "Blockchain",
+    "pattern": "@solana/|solana-program|solana_sdk|solana-sdk|api\\.devnet\\.solana",
+    "path_pattern": "",
+    "url": "https://solana.com/docs",
+    "packages": [
+      "@solana/web3.js",
+      "@solana/kit",
+      "solana",
+      "solana-program",
+      "solana-sdk"
+    ]
+  },
+  {
+    "name": "Anchor",
+    "category": "Blockchain",
+    "pattern": "anchor-lang|anchor_lang|@coral-xyz/anchor|@anchor-lang/core",
+    "path_pattern": "(^|/)Anchor\\.toml$",
+    "url": "https://www.anchor-lang.com/docs",
+    "packages": [
+      "anchor-lang",
+      "@coral-xyz/anchor",
+      "@anchor-lang/core"
+    ]
+  },
+  {
+    "name": "Solidity",
+    "category": "Blockchain",
+    "pattern": "pragma solidity",
+    "path_pattern": "\\.sol$",
+    "url": "https://docs.soliditylang.org/en/latest/",
+    "packages": []
+  },
+  {
+    "name": "Ethereum",
+    "category": "Blockchain",
+    "pattern": "ethereum|@openzeppelin/|\"ethers\"\\s*:|\"viem\"\\s*:",
+    "path_pattern": "",
+    "url": "https://ethereum.org/developers/docs/",
+    "packages": []
+  },
+  {
+    "name": "ethers.js",
+    "category": "Blockchain",
+    "pattern": "from [\\'\"]ethers[\\'\"]|\"ethers\"\\s*:",
+    "path_pattern": "",
+    "url": "https://docs.ethers.org/v6/",
+    "packages": [
+      "ethers"
+    ]
+  },
+  {
+    "name": "Wagmi",
+    "category": "Blockchain",
+    "pattern": "\\bwagmi\\b",
+    "path_pattern": "",
+    "url": "https://wagmi.sh/react/getting-started",
+    "packages": [
+      "wagmi",
+      "@wagmi/core"
+    ]
+  },
+  {
+    "name": "OpenZeppelin",
+    "category": "Blockchain",
+    "pattern": "@openzeppelin/",
+    "path_pattern": "",
+    "url": "https://docs.openzeppelin.com/contracts",
+    "packages": [
+      "@openzeppelin/contracts",
+      "@openzeppelin/contracts-upgradeable"
+    ]
+  },
+  {
+    "name": "Hardhat",
+    "category": "Blockchain",
+    "pattern": "\\bhardhat\\b",
+    "path_pattern": "hardhat\\.config\\.",
+    "url": "https://hardhat.org/docs",
+    "packages": [
+      "hardhat"
+    ]
+  },
+  {
+    "name": "Docker",
+    "category": "Infrastructure",
+    "pattern": "FROM (?:node|python)|docker compose|docker build",
+    "path_pattern": "(^|/)Dockerfile$",
+    "url": "https://docs.docker.com/",
+    "packages": []
+  },
+  {
+    "name": "GitHub Actions",
+    "category": "Infrastructure",
+    "pattern": "actions/checkout|runs-on:",
+    "path_pattern": "^\\.github/workflows/",
+    "url": "https://docs.github.com/en/actions",
+    "packages": []
+  },
+  {
+    "name": "Pytest",
+    "category": "Testing",
+    "pattern": "\\bpytest\\b",
+    "path_pattern": "",
+    "url": "https://docs.pytest.org/en/stable/",
+    "packages": [
+      "pytest"
+    ]
+  },
+  {
+    "name": "Playwright",
+    "category": "Testing",
+    "pattern": "@playwright/test|\\bplaywright\\b",
+    "path_pattern": "",
+    "url": "https://playwright.dev/docs/intro",
+    "packages": [
+      "@playwright/test",
+      "playwright"
+    ]
+  },
+  {
+    "name": "Vitest",
+    "category": "Testing",
+    "pattern": "\\bvitest\\b",
+    "path_pattern": "",
+    "url": "https://vitest.dev/guide/",
+    "packages": [
+      "vitest"
+    ]
+  },
+  {
+    "name": "pnpm",
+    "category": "Tooling",
+    "pattern": "\\bpnpm\\b",
+    "path_pattern": "",
+    "url": "https://pnpm.io/motivation",
+    "packages": [
+      "pnpm"
+    ]
+  },
+  {
+    "name": "ESLint",
+    "category": "Tooling",
+    "pattern": "\\beslint\\b",
+    "path_pattern": "",
+    "url": "https://eslint.org/docs/latest/",
+    "packages": [
+      "eslint"
+    ]
+  }
+]
