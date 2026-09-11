@@ -15,7 +15,7 @@ from cryptography.fernet import Fernet
 from fastapi import Depends, FastAPI, HTTPException, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, RedirectResponse, StreamingResponse
-from itsdangerous import BadSignature
+from itsdangerous import BadSignature, SignatureExpired
 from openai import APIError
 from redis.asyncio import Redis
 
@@ -711,10 +711,21 @@ async def github_callback(
 ):
     if not settings.oauth_configured:
         raise HTTPException(503, "GitHub sign-in is not configured.")
+    state_cookie = request.cookies.get("repolens_oauth_state")
+    if not state_cookie:
+        raise HTTPException(
+            400,
+            "GitHub sign-in state is missing. Start sign-in again from the same browser URL.",
+        )
     try:
-        stored = serializer.loads(request.cookies.get("repolens_oauth_state", ""), max_age=600)
-    except BadSignature:
+        stored = serializer.loads(state_cookie, max_age=600)
+    except SignatureExpired:
         raise HTTPException(400, "GitHub sign-in expired. Start sign-in again.") from None
+    except BadSignature:
+        raise HTTPException(
+            400,
+            "GitHub sign-in state is invalid. Use the same browser URL and start again.",
+        ) from None
     if (
         not code
         or not state

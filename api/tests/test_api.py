@@ -282,6 +282,27 @@ def test_oauth_state_encryption_private_access_and_logout(client, monkeypatch):
     assert not client.get("/v1/auth/session").json()["authenticated"]
 
 
+def test_oauth_callback_requires_state_cookie(client, monkeypatch):
+    from cryptography.fernet import Fernet
+    from app.core.settings import get_settings
+
+    settings = get_settings()
+    for name, value in {
+        "github_client_id": "test-client",
+        "github_client_secret": "test-secret",
+        "session_secret": "test-session-secret",
+        "token_encryption_key": Fernet.generate_key().decode(),
+    }.items():
+        monkeypatch.setattr(settings, name, value)
+
+    response = client.get("/v1/auth/github/callback?code=test&state=test")
+
+    assert response.status_code == 400
+    assert response.json()["detail"] == (
+        "GitHub sign-in state is missing. Start sign-in again from the same browser URL."
+    )
+
+
 def test_provider_errors_are_actionable_and_redacted():
     from openai import AuthenticationError, RateLimitError
 
