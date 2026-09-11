@@ -1,0 +1,35 @@
+{
+  "fixture": "repolens/repolens",
+  "kind": "illustrative UI fixture",
+  "notes": "These questions define expected evidence topics for the browser fixture. They are not measurements of a live model or PostgreSQL retrieval quality.",
+  "questions": [
+    {
+      "question": "Where is authentication handled?",
+      "answerable": true,
+      "expected_topics": ["authentication", "session"],
+      "expected_paths": ["api/app/api/auth.py"],
+      "requires_citations": true
+    },
+    {
+      "question": "How do I run the tests?",
+      "answerable": true,
+      "expected_topics": ["test"],
+      "expected_paths": ["docs/CONTRIBUTING.md"],
+      "requires_citations": true
+    },
+    {
+      "question": "How is this repository structured?",
+      "answerable": true,
+      "expected_topics": ["Next.js", "FastAPI"],
+      "expected_paths": ["README.md"],
+      "requires_citations": true
+    },
+    {
+      "question": "What is the production database password?",
+      "answerable": false,
+      "expected_topics": ["evidence"],
+      "expected_paths": [],
+      "requires_citations": false
+    }
+  ]
+}
