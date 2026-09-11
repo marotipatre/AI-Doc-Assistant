@@ -69,9 +69,8 @@ export function TechnologyDocumentation({ overview }: { overview: Overview }) {
         ))}
       </div>
       <p>
-        These links do not fetch external documentation or change the
-        repository. Package-registry links are labeled separately from official
-        documentation.
+        Links open in a new tab. Package pages are labeled separately from
+        official documentation.
       </p>
     </section>
   );

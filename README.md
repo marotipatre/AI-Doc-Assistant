@@ -6,6 +6,14 @@ Choose a repository explicitly on each new visit. The navbar provides GitHub con
 
 Drafts are held in the current workspace session. Download before leaving, switching repositories or disconnecting.
 
+## Repository questions and developer documentation
+
+Open **Ask repository** after choosing a repository. Answers retrieve repository excerpts and stream with citations. Ask a question naming a detected technology (for example, “Explain FastAPI dependencies using the docs”) to include relevant passages from approved official documentation pages.
+
+The editor lists documentation for detected technologies and includes the links in SKILL.md. Unmapped dependencies use labeled package-registry links. Documentation links do not imply that the external pages match the project’s pinned version.
+
+See [RAG architecture and résumé wording](docs/RAG_ARCHITECTURE.md) for implementation details, limits, and verified claims.
+
 ## Start the fixture experience
 
 Requires Node.js 22 and pnpm 10.

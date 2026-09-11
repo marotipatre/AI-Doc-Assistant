@@ -372,7 +372,7 @@ export function Workbench({ children }: { children: ReactNode }) {
             {navigation.map(({ href, label, icon: Icon, step }) => (
               <Link
                 key={href}
-                href={href}
+                href={demo ? `${href}?demo=1` : href}
                 aria-current={pathname === href ? "page" : undefined}
               >
                 <Icon size={18} />

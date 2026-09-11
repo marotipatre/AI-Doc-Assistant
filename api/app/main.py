@@ -44,6 +44,7 @@ from app.llm.efficiency import (
 from app.llm.gemini import GeminiError
 from app.llm.groq import GroqError
 from app.llm.provider import answer, provider_failure_message
+from app.retrieval.documentation import retrieve_documentation
 from app.retrieval.search import lexical_rank, retrieve
 from app.schemas import (
     ConnectRequest,
@@ -493,11 +494,19 @@ async def message(
                 question["content"],
                 store.list("sources", repository_id=record["repository_id"]),
             )
-            evidence = bounded_evidence(
-                doc_links
-                if doc_links and is_documentation_lookup(question["content"])
-                else doc_links + await retrieve(record["repository_id"], question["content"])
-            )
+            if doc_links and is_documentation_lookup(question["content"]):
+                evidence = bounded_evidence(doc_links)
+            else:
+                repository_sources = store.list("sources", repository_id=record["repository_id"])
+                external = (
+                    []
+                    if repo.get("is_demo")
+                    else await retrieve_documentation(question["content"], repository_sources)
+                )
+                local = await retrieve(record["repository_id"], question["content"])
+                evidence = bounded_evidence(
+                    local[:3] + external + (doc_links if not external else []) + local[3:]
+                )
             yield sse("citations", {"sources": evidence})
             output = ""
             prompt_history = bounded_history(history)

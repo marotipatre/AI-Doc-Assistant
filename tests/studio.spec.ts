@@ -46,7 +46,7 @@ test("cards can be moved and reviewed; route navigation preserves the task draft
   );
   await page
     .locator(
-      'nav[aria-label="Workspace pages"] a[href="/workspace/repository"]',
+      'nav[aria-label="Workspace pages"] a[href^="/workspace/repository"]',
     )
     .click();
   await expect(page).toHaveURL(/\/workspace\/repository/);

@@ -48,3 +48,10 @@ Gemini native REST streaming and embedding support was added with explicit provi
 - Desktop/mobile checks cover explicit selection despite old saved state, selecting a second GitHub repository and its branch, disconnect clearing fields/draft, editing proposals, apply/undo and stale-proposal protection.
 - Browser checks for pages, mobile widths, themes, downloads and card controls passed after updating labels. Provider and GitHub responses were mocked for integration verification; no paid model requests or live OAuth actions were used.
 - Production build passed. Visually inspected empty workspace and document editor with navbar GitHub control.
+
+## RAG and external documentation revision
+- 83 backend tests passed, including actual HTML extraction with mocked HTTP, relevant child-page selection, cache reuse, blocked redirects and bounded concurrent fetches.
+- Python type/lint and Next.js type/lint checks passed before final UI prompt-copy adjustment.
+- Documentation catalog links were checked against official sites. Unsupported technologies use labeled package-registry links when manifest parsing identifies a package.
+- Provider requests remain mocked for verification; external documentation fetches in tests are mocked as well. No real-provider performance benchmark is claimed.
+- Final browser verification: 15 passed, one desktop-only drag test skipped on mobile. Includes documentation links in SKILL.md, question citations, adding answers to the editor, account-selection flows and responsive layouts. Local test-server execution required sandbox permission to bind localhost.

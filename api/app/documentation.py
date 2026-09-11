@@ -150,6 +150,8 @@ def documentation_sources(repository_id: str, question: str, sources: list[dict]
 
 
 def is_documentation_lookup(question: str) -> bool:
+    if re.search(r"\b(read|explain|how|implement|example)\b", question, re.I):
+        return False
     return bool(
         re.search(r"\b(docs?|documentation|reference|tutorial|guide)\b", question, re.I)
         and re.search(r"\b(where|links?|find|official|redirect)\b", question, re.I)

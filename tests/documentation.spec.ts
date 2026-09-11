@@ -25,6 +25,9 @@ test("repository questions retrieve example references and can be added to the d
   page,
 }) => {
   await page.goto("/workspace?demo=1");
+  await expect(
+    page.getByRole("heading", { name: "Create and edit SKILL.md" }),
+  ).toBeVisible();
   await page.getByRole("link", { name: "Ask repository" }).click();
   await page.getByLabel("Your question").fill("How do I run the tests?");
   await page.getByRole("button", { name: "Ask question", exact: true }).click();

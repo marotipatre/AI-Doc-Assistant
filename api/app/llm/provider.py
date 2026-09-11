@@ -27,6 +27,10 @@ when required. Never claim to have modified the repository.
 When supplied documentation link entries, use only their exact URLs and label
 package registry links separately from official documentation. A link entry is
 not documentation content: do not invent instructions from an unvisited page.
+Sources labeled Official documentation contain extracted external page text.
+Distinguish documented library behavior from behavior implemented in the repository.
+Cite the provided page URL when using external documentation. Never imply the
+latest documentation version necessarily matches the repository version.
 """
 
 

@@ -4,6 +4,7 @@ import { TechnologyDocumentation } from "./technology-documentation";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { FilePlus2, Send, Square } from "lucide-react";
+import { repositoryDocumentation } from "@/lib/documentation";
 import { getApi } from "@/lib/api-client";
 import type { Message, Overview } from "@/lib/dto";
 
@@ -14,6 +15,9 @@ export function RepositoryQuestions({
   overview: Overview;
   onAddToDocument: (text: string) => void;
 }) {
+  const primaryTechnology = repositoryDocumentation(overview).find(
+    (item) => item.kind === "Official documentation",
+  )?.name;
   const api = getApi(overview.repository.is_demo ? "demo" : "live");
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -108,8 +112,10 @@ export function RepositoryQuestions({
         <h1>Ask repository</h1>
         <p>
           Ask about setup, project structure, or a specific feature. Answers
-          include references to the files used. Check those files before making
-          changes.
+          include references to the files used. Name a technology when you want
+          an explanation from its official documentation, such as “Explain
+          FastAPI dependencies using the docs.” Check the cited version before
+          making changes.
         </p>
         {overview.repository.is_demo && (
           <p>You are using example files and example answers.</p>
@@ -118,6 +124,9 @@ export function RepositoryQuestions({
       <div className="question-examples">
         {[
           "Where are the official documentation links for this project?",
+          ...(primaryTechnology
+            ? [`Explain ${primaryTechnology} setup using the official docs`]
+            : []),
           "How do I run the tests?",
           "Where is authentication implemented?",
           "How is this repository structured?",
