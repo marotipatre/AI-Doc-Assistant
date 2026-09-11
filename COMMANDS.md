@@ -6,7 +6,7 @@ Run these commands from two separate terminal tabs. Keep both tabs open while us
 
 ```bash
 cd /Users/maroti/Crypto/dev-assist
-api/.venv/bin/uvicorn app.main:app --app-dir api --host 127.0.0.1 --port 8000 --reload
+pnpm run dev:api
 ```
 
 ## 2. Start Next.js (frontend)

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:api": "api/.venv/bin/uvicorn app.main:app --app-dir api --reload",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
