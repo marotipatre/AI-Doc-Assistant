@@ -1,0 +1,6 @@
+api/
+tests/
+docs/
+artifacts/
+test-results/
+playwright-report/
