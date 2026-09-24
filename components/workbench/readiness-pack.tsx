@@ -113,8 +113,20 @@ export function ReadinessPack({
             placeholder="For example: add password reset to authentication"
           />
           <p>
-            {pack.relevant.length} matching file references will be included.
+            {pack.relevant.length
+              ? `${pack.relevant.length} relevant file${pack.relevant.length === 1 ? "" : "s"} found.`
+              : "Describe the change to find relevant files in this snapshot."}
           </p>
+          {pack.relevantMatches.length > 0 && (
+            <ul className="task-matches" aria-label="Relevant files">
+              {pack.relevantMatches.map(({ source, matches }) => (
+                <li key={source.id}>
+                  <strong>{source.path}</strong>
+                  <span>Matches: {matches.slice(0, 3).join(", ")}</span>
+                </li>
+              ))}
+            </ul>
+          )}
           {editedDocument !== null && (
             <p>
               The document has been edited. Make further changes to its task
@@ -327,9 +339,10 @@ export function ReadinessPack({
         <pre>{documentContent}</pre>
       </details>
       <p>
-        For tools supporting skills, save the reviewed file under{" "}
-        <code>.agents/skills/{pack.name}/SKILL.md</code>. Other tools can use it
-        as attached context. Repository instructions remain authoritative.
+        The reviewed file is SKILL.md. For tools supporting skills, save it
+        under <code>.agents/skills/{pack.name}/SKILL.md</code>. Other tools can
+        use it as attached context. Repository instructions remain
+        authoritative.
       </p>
     </section>
   );

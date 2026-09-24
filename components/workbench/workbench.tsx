@@ -385,8 +385,9 @@ export function Workbench({ children }: { children: ReactNode }) {
             <FileCode2 size={21} />
             <strong>What is SKILL.md?</strong>
             <p>
-              A Markdown file containing setup steps, project rules, and checks
-              for this repository.
+              The single Markdown file containing setup steps, project rules,
+              and checks for this repository. “Skills” is the folder or tool
+              concept; the file you edit here is always SKILL.md.
             </p>
             <Link href="/guide">
               How to use the file <ArrowUpRight size={14} />
