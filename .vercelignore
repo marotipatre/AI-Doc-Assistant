@@ -1,4 +1,8 @@
-api/
+api/**/*.py
+api/pyproject.toml
+api/requirements.txt
+api/Dockerfile
+api/.dockerignore
 tests/
 docs/
 artifacts/
